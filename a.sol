@@ -1,1 +1,3 @@
-sfkahfla
+sfkahflafuncti
+function bi() pub
+
