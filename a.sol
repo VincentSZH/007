@@ -1,3 +1,0 @@
-sfkahflafuncti
-function bi() pub
-
