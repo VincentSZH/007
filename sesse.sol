@@ -28,3 +28,13 @@ contract base1{
         _;
     }
 }
+contract Identifier is base1 {
+    function GetexactDividedBy2And3(uint _divided) public exactDividedBy2And3(_divided ) pure returns(uint , uint){
+        return GetexactDividedBy2And3WithouModifier(_divided);
+    }
+    function GetexactDividedBy2And3WithouModifier(uint _divided) public pure returns(uint,uint){
+        uint div2 = _divided / 2;
+        uint div3 = _divided / 3;
+        return(div2,div3);
+    }
+}
