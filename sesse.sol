@@ -22,6 +22,14 @@ contract Baba is Yeye{
         emit Log("Baba");
     }
 }
+contract Erzi is Yeye, Baba {
+    function hip() public virtual override (Yeye, Baba) {
+        emit Log("Erzi");
+    }
+    function pop() public virtual override (Yeye,Baba) {
+        emit Log("Erzi");
+    }
+}
 contract base1{
     modifier exactDividedBy2And3(uint _a) virtual {
         require(_a %2 == 0 && _a % 3 == 0);
