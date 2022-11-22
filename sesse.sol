@@ -22,3 +22,9 @@ contract Baba is Yeye{
         emit Log("Baba");
     }
 }
+contract base1{
+    modifier exactDividedBy2And3(uint _a) virtual {
+        require(_a %2 == 0 && _a % 3 == 0);
+        _;
+    }
+}
