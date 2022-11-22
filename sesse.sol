@@ -29,6 +29,12 @@ contract Erzi is Yeye, Baba {
     function pop() public virtual override (Yeye,Baba) {
         emit Log("Erzi");
     }
+    function callParent() public {
+        Yeye.pop();
+    }
+    function CallSupper() public {
+        super.pop();
+    }
 }
 contract base1{
     modifier exactDividedBy2And3(uint _a) virtual {
