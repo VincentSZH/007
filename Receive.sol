@@ -21,3 +21,10 @@ contract Receive {
     //         /     \
     //   receive()   fallback()
 }
+contract ReceiveETH {
+    event Received(address Sender,uint Value );
+    receive()external payable {
+        emit Received(msg.sender , msg.value );
+        
+    }
+}
