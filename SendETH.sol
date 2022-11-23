@@ -14,4 +14,7 @@ contract ReceiveETH {
 contract SendETH {
     constructor() payable {}
     receive() external payable{}
+    function transferETH (address payable _to, uint256 amount)external payable{
+        _to.transfer(amount);
+    }
 }
