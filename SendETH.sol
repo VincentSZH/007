@@ -23,4 +23,10 @@ contract SendETH {
             revert SendFailed();
         }
     }
+    function callETH (address payable _to, uint256 amount) external payable {
+        (bool success,) = _to.call{value:amount}("");
+        if(!success){
+            revert CallFailed();
+        }
+    }
 }
