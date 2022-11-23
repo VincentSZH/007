@@ -25,6 +25,13 @@ contract ReceiveETH {
     event Received(address Sender,uint Value );
     receive()external payable {
         emit Received(msg.sender , msg.value );
-        
+
+    }
+}
+
+contract a {
+    event Received (address Sender, uint Value, string message );
+    receive()external payable {
+        emit Received(msg.sender, msg.value, "receive");
     }
 }
