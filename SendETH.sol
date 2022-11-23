@@ -11,3 +11,7 @@ contract ReceiveETH {
 
     }
 }
+contract SendETH {
+    constructor() payable {}
+    receive() external payable{}
+}
