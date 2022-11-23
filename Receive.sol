@@ -8,4 +8,16 @@ contract Receive {
     fallback() external payable {
         emit fallbackCalled(msg.sender, msg.value, msg.data);
     }
+    //  触发fallback() 还是 receive()?
+    //         接收ETH
+    //             |
+    //        msg.data是空？
+    //           /  \
+    //         是    否
+    //         /      \
+    // receive()存在?   fallback()
+    //           / \
+    //          是  否
+    //         /     \
+    //   receive()   fallback()
 }
