@@ -15,3 +15,15 @@ contract OtherContract {
         x =  _x;
     }
 }
+contract Callcontract{
+    function callSetX(address _address, uint256 x) external {
+        OtherContract(_address).setx(x);
+    }
+    function callGetX(OtherContract _address) external view returns(uint x){
+        x = _address.getx();
+    }
+    function callGetX2(address _address) external view returns(uint x){
+        OtherContract oc = OtherContract(_address);
+        x = oc.getx();
+    }
+}
