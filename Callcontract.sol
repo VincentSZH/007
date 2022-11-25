@@ -32,5 +32,11 @@ contract Call {
         emit Response(success,data);
         return abi.decode(data, (uint256));
     }
+    function callNonExist(address _address) external {
+        (bool success , bytes memory data) = _address.call(
+            abi.encodeWithSignature("getX()")
+        );
+        emit Response(success,data);
+    }
 }
 
