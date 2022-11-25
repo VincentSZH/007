@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 contract OtherContract {
     uint256 private _x = 0;
@@ -26,4 +27,5 @@ contract Callcontract{
         OtherContract oc = OtherContract(_address);
         x = oc.getx();
     }
+
 }
