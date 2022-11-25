@@ -27,5 +27,8 @@ contract Callcontract{
         OtherContract oc = OtherContract(_address);
         x = oc.getx();
     }
+    function settransferETH(address otherContract , uint256 x) payable external {
+        OtherContract(otherContract).setx{value : msg.value}(x);
+    }
 
 }
