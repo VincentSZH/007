@@ -23,7 +23,14 @@ contract Call {
     (bool success, bytes memory data) = _addr.call{value: msg.value}(
         abi.encodeWithSignature("setX(uint256)", x)
     );
-
     emit Response(success, data); 
+    }
+    function callGetX(address _address) external returns (uint256) {
+        (bool success , bytes memory data) = _address.call(
+            abi.encodeWithSignature("getX()")
+        );
+        emit Response(success,data);
+        return abi.decode(data, (uint256));
+    }
 }
-}
+
