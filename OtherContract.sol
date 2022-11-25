@@ -32,3 +32,9 @@ contract Callcontract{
     }
 
 }
+
+interface IOtherContract {
+    function getBalance() external returns(uint);
+    function setX(uint256 x) external payable;
+    function getX() external view returns(uint x);
+}
