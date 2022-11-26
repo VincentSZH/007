@@ -16,5 +16,9 @@ contract B {
             abi.encodeWithSignature("setVar(uint256)", _num)
         );
     }
-
+    function delegateCallSetVars(address _addr, uint _num) external payable {
+        (bool success , bytes memory data ) = _addr.delegatecall(
+            abi.encodeWithSignature("setVars(uint256)", _num)
+        );
+    }
 }
