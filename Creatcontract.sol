@@ -13,5 +13,6 @@ contract Pair {
     }
 }
 contract PairFactory {
-    
+    mapping(address => mapping(address => address)) public getPair;
+    address[] public allPairs;
 }
