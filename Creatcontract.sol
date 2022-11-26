@@ -12,3 +12,6 @@ contract Pair {
         token2 = _token2;
     }
 }
+contract PairFactory {
+    
+}
