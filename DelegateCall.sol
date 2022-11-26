@@ -7,3 +7,14 @@ contract C {
         sender = msg.sender;
     }
 }
+
+contract B {
+    uint public num;
+    address public Sender;
+    function callSetVars(address _addr, uint _num) external payable {
+        (bool success , bytes memory data ) = _addr.call(
+            abi.encodeWithSignature("setVar(uint256)", _num)
+        );
+    }
+
+}
