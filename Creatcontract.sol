@@ -15,4 +15,12 @@ contract Pair {
 contract PairFactory {
     mapping(address => mapping(address => address)) public getPair;
     address[] public allPairs;
+    function createPair(address tokenA, address tokenB) external returns(address pairAddr) {
+        Pair pair = new Pair();
+        pair.initialize(tokenA,tokenB);
+        pairAddr = address(paira);
+        allPairs.push(pairAddr);
+        getPair[tokenA] [tokenB] = pairAddr;
+
+    }
 }
