@@ -21,6 +21,6 @@ contract PairFactory {
         pairAddr = address(paira);
         allPairs.push(pairAddr);
         getPair[tokenA] [tokenB] = pairAddr;
-
+        getPair[tokenB] [tokenA] = pairAddr;
     }
 }
