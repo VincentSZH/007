@@ -17,6 +17,7 @@ contract PairCreate2 {
     address[] public allPairs;
     function creactPair2(address tokenA, address tokenB) external returns(address pairAddr) {
         require(tokenA != tokenB, "IDENTICAL_ADDRESSES");
-
+        (address token0, address token1) = tokenA < tokenB ? (tokenA , tokenB) : (tokenB, tokenA);
+        bytes32 salt = keccak256(abi.encodePacked(token0, token1));
     }
 }
