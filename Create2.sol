@@ -11,5 +11,12 @@ contract Pair {
         token0 = _token0;
         token1 = _token1;
     }
-    
 } 
+contract PairCreate2 {
+    mapping(address =>  mapping(address => address)) public getPair;
+    address[] public allPairs;
+    function creactPair2(address tokenA, address tokenB) external returns(address pairAddr) {
+        require(tokenA != tokenB, "IDENTICAL_ADDRESSES");
+
+    }
+}
