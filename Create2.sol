@@ -19,5 +19,12 @@ contract PairCreate2 {
         require(tokenA != tokenB, "IDENTICAL_ADDRESSES");
         (address token0, address token1) = tokenA < tokenB ? (tokenA , tokenB) : (tokenB, tokenA);
         bytes32 salt = keccak256(abi.encodePacked(token0, token1));
+        Pair pair = new Pair{salt : salt} ();
+        pair.initialize(tokenA, tokenB);
+        pairAddr = address(pair);
+        allPairs.push(pairAddr);
+        getPair[tokenA][tokenB] = pairAddr;
+        getPair[tokenB][tokenA] = pairAddr;
     }
+
 }
