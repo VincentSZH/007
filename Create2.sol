@@ -28,6 +28,9 @@ contract PairCreate2 {
     }
     function caluateAddr(address tokenA, address tokenB) public view returns(address predictedAddress) {
         require(tokenA != tokenB, "IDENTICAL_ADDRESSES");
+        (address token0, address token1) = tokenA < tokenB ? (tokenA , tokenB) : (tokenB, tokenA);
+                bytes32 salt = keccak256(abi.encodePacked(token0, token1));
+
     }
 
 }
