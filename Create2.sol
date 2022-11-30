@@ -36,7 +36,5 @@ contract PairCreate2 {
             salt,
             keccak256(type(Pair).creationCode)
         )))));
-
     }
-
 }
