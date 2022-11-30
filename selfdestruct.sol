@@ -3,4 +3,7 @@ contract DeleteContract {
     uint public value = 10;
     constructor() payable {}
     receive() external payable {}
+    function deleteContract() external {
+        selfdestruct(payable(msg.sender));
+    }
 }
