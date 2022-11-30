@@ -26,5 +26,8 @@ contract PairCreate2 {
         getPair[tokenA][tokenB] = pairAddr;
         getPair[tokenB][tokenA] = pairAddr;
     }
+    function caluateAddr(address tokenA, address tokenB) public view returns(address predictedAddress) {
+        require(tokenA != tokenB, "IDENTICAL_ADDRESSES");
+    }
 
 }
