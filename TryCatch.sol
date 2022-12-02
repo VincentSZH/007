@@ -16,5 +16,16 @@ contract TryCatch{
     event SuccessEvent();
     event CatchEvent(string message);
     event CatchByte(bytes data);
-
+    OnlyEven even;
+    constructor() {
+        even = new OnlyEven(2);
+    }
+    function execute(uint amount) external returns (bool success) {
+        try even.onlyEven(amount) returns(bool _success){
+            emit SuccessEvent();
+            return _success;
+        } catch Error(string memory reason){
+            emit CatchEvent(reason);
+        }
+    }
 }
