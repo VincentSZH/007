@@ -11,3 +11,10 @@ contract OnlyEven{
         success = true;
     }
 }
+
+contract TryCatch{
+    event SuccessEvent();
+    event CatchEvent(string message);
+    event CatchByte(bytes data);
+
+}
