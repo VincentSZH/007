@@ -13,5 +13,8 @@ contract ABI {
     function econdeWithSignature() public view returns (bytes memory result) {
         result = abi.encodeWithSignature("foo(uint256,address,string,uint256[2])", x, addr, name, array);
     }
+    function encodeWithSelector() public view returns (bytes memory result) {
+        result = abi.encodeWithSelector(bytes4(keccak256("foo(uint256,address,string,uint256[2])")), x, addr, name, array);
+    }
     
 }
