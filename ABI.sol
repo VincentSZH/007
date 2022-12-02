@@ -7,7 +7,10 @@ contract ABI {
     function encode() public view returns(bytes memory result) {
         result = abi.encode(x, addr, name, array);
     }
-    function encodePacked() public view returns(bytes memory reslut) {
-        result = abi.encodePacked(x, addr, name, array)
+    function encodePacked() public view returns(bytes memory result) {
+        result = abi.encodePacked(x, addr, name, array);
+    }
+    function econdeWithSignature() public view returns (bytes memory result) {
+        result = abi.encodeWithSignature("foo(uint256,address,string,uint256[2])", x, addr, name, array);
     }
 }
