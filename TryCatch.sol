@@ -28,4 +28,14 @@ contract TryCatch{
             emit CatchEvent(reason);
         }
     }
+     function executeNew(uint a) external returns (bool success) {
+        try new OnlyEven(a) returns(OnlyEven _even){
+            emit SuccessEvent();
+            success = _even.onlyEven(a);
+        } catch Error(string memory reason) {
+            emit CatchEvent(reason);
+        } catch (bytes memory reason) {
+            emit CatchByte(reason);
+        }
+    }
 }
